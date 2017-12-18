@@ -29,6 +29,7 @@ func failed(message string) {
 
 func writeDefaultsFile() {
 	var lines = []string{
+		"#administred by github.com/dgx80/maker\n",
 		".PHONY: help\n\n",
 		"help: ## help - Display callable targets. Hint: you can write just make to see help\n\t",
 		`@grep -E '(^[a-zA-Z_-]+:.*?##.*$$)|(^##)' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[32m%-20s\033[0m %s\n", $$1, $$2}' | sed -e 's/\[32m##/[33m/'`,
